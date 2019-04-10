@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC124218225B5C9A00C125FC /* SudokuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC124217225B5C9A00C125FC /* SudokuViewController.swift */; };
 		ECB1C6F22255CBE4002A4E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C6F12255CBE4002A4E9E /* AppDelegate.swift */; };
 		ECB1C6F42255CBE4002A4E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C6F32255CBE4002A4E9E /* ViewController.swift */; };
 		ECB1C6F72255CBE4002A4E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB1C6F52255CBE4002A4E9E /* Main.storyboard */; };
@@ -14,6 +15,11 @@
 		ECB1C6FC2255CBE4002A4E9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECB1C6FA2255CBE4002A4E9E /* LaunchScreen.storyboard */; };
 		ECB1C7072255CBE5002A4E9E /* Interface_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C7062255CBE5002A4E9E /* Interface_Tests.swift */; };
 		ECB1C7122255CBE5002A4E9E /* Interface_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C7112255CBE5002A4E9E /* Interface_UITests.swift */; };
+		ECB1C7202255CEF0002A4E9E /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C71F2255CEF0002A4E9E /* ScoresViewController.swift */; };
+		ECB1C7222255CF18002A4E9E /* ParamatreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C7212255CF18002A4E9E /* ParamatreViewController.swift */; };
+		ECB1C7242255CF33002A4E9E /* JeuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C7232255CF33002A4E9E /* JeuViewController.swift */; };
+		ECEE227D225B1B00004482F6 /* BoutonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE227C225B1B00004482F6 /* BoutonView.swift */; };
+		ECEE227F225B22DF004482F6 /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE227E225B22DF004482F6 /* SudokuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC124217225B5C9A00C125FC /* SudokuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuViewController.swift; sourceTree = "<group>"; };
 		ECB1C6EE2255CBE4002A4E9E /* Interface..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interface..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB1C6F12255CBE4002A4E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECB1C6F32255CBE4002A4E9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,11 @@
 		ECB1C70D2255CBE5002A4E9E /* Interface.UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Interface.UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB1C7112255CBE5002A4E9E /* Interface_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface_UITests.swift; sourceTree = "<group>"; };
 		ECB1C7132255CBE5002A4E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB1C71F2255CEF0002A4E9E /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		ECB1C7212255CF18002A4E9E /* ParamatreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamatreViewController.swift; sourceTree = "<group>"; };
+		ECB1C7232255CF33002A4E9E /* JeuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuViewController.swift; sourceTree = "<group>"; };
+		ECEE227C225B1B00004482F6 /* BoutonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonView.swift; sourceTree = "<group>"; };
+		ECEE227E225B22DF004482F6 /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +110,14 @@
 			isa = PBXGroup;
 			children = (
 				ECB1C6F12255CBE4002A4E9E /* AppDelegate.swift */,
-				ECB1C6F32255CBE4002A4E9E /* ViewController.swift */,
 				ECB1C6F52255CBE4002A4E9E /* Main.storyboard */,
+				EC124217225B5C9A00C125FC /* SudokuViewController.swift */,
+				ECEE227E225B22DF004482F6 /* SudokuView.swift */,
+				ECEE227C225B1B00004482F6 /* BoutonView.swift */,
+				ECB1C6F32255CBE4002A4E9E /* ViewController.swift */,
+				ECB1C71F2255CEF0002A4E9E /* ScoresViewController.swift */,
+				ECB1C7212255CF18002A4E9E /* ParamatreViewController.swift */,
+				ECB1C7232255CF33002A4E9E /* JeuViewController.swift */,
 				ECB1C6F82255CBE4002A4E9E /* Assets.xcassets */,
 				ECB1C6FA2255CBE4002A4E9E /* LaunchScreen.storyboard */,
 				ECB1C6FD2255CBE4002A4E9E /* Info.plist */,
@@ -259,8 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB1C7222255CF18002A4E9E /* ParamatreViewController.swift in Sources */,
+				ECEE227F225B22DF004482F6 /* SudokuView.swift in Sources */,
+				ECEE227D225B1B00004482F6 /* BoutonView.swift in Sources */,
 				ECB1C6F42255CBE4002A4E9E /* ViewController.swift in Sources */,
+				ECB1C7202255CEF0002A4E9E /* ScoresViewController.swift in Sources */,
+				ECB1C7242255CF33002A4E9E /* JeuViewController.swift in Sources */,
 				ECB1C6F22255CBE4002A4E9E /* AppDelegate.swift in Sources */,
+				EC124218225B5C9A00C125FC /* SudokuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
