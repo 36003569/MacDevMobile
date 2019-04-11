@@ -15,33 +15,19 @@ class SudokuViewController: UIViewController {
     var arr = Array(repeating: Array(repeating : UIButton(), count:9), count: 9)
     var i = Int()
     var j = Int()
-    
+    var dimGrille = 4
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-       /* let numViewPerRow = 8
-        let numViewPerColumn = 8
-        let width = view.frame.width / CGFloat(numViewPerRow)
-        var cell : [[UIView]] = []
-        let redview = UIView()
-        
-        for i in 0...numViewPerRow{
-            cell.append( [] )
-            for j in 0...numViewPerColumn{
-                redview.backgroundColor = .red
-                redview.frame = CGRect(x : CGFloat(i) * width, y: CGFloat(j) * width, width: width, height: width)
-                cell[i].append(redview)
-                print()
-            }
-        }*/
-        let numViewPerRow = 9
+        let numViewPerRow = dimGrille + 1
         let width = view.frame.width / CGFloat(numViewPerRow)
         
         
-        for j in 0...8{
-            for i in 0...8{
+        for j in 0...4{
+            for i in 0...4{
                 let cellView = UIButton(frame: CGRect (x: CGFloat(i) * width , y : CGFloat(j) * width , width : width , height : width))
                 cellView.backgroundColor = .white
-                cellView.setTitle("\(i), \(j)", for: .normal)
+                cellView.setTitle("", for: .normal)
                 cellView.setTitleColor(.black, for: .normal)
                 /*cellView.frame = CGRect(x: CGFloat(i) * width , y : CGFloat(j) * width , width : width , height : width)*/
                 cellView.layer.borderWidth = 0.5
@@ -53,20 +39,99 @@ class SudokuViewController: UIViewController {
                 
             }
         }
+        random(n: 20)
+        
+        // cellView.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        
+        view.addGestureRecognizer(UIPanGestureRecognizer(target : self, action : #selector(handlePan)))
+        
+        
     }
+    
     @objc func buttonAction(sender: UIButton!){
         var value = [" ","1","2","3","4","5","6","7","8","9"] //?
         idc = (idc+1) % 10
         let button = sender as UIButton
-        button.setTitle(value[idc], for: .normal)
         
+        if button.currentTitle == ""{
+            button.setTitle("1", for: .normal)
         }
-            
+        else{
+            button.setTitle(String((Int(button.currentTitle!)! + 1) % 10), for: .normal)
+        }
+        //  button.setTitle("\(buttonInt)", for: UIControlState.normal)
+        
+    }
+    
+    
+    @objc func handlePan(gesture : UIPanGestureRecognizer) {
+        let location = gesture.location(in : view)
+        print(location)
+    }
+    
+    //Vérification des occurences dans le tableau pour les lignes
+    func lineVerification (x : Int, y : Int , cont : String) -> Bool
+    {
+        for i in 0...dimGrille{
+            if arr[i][y].currentTitle == cont{
+                //print("LineVer Faux")
+                return false
+            }
+        }
+        //print("line true")
+        return true
+    }
+    
+    func random(n : Int){
+        var count = 0
+        let numViewPerRow  = UInt32(dimGrille + 1)
+        while count < n{
+            let cellulex = Int(arc4random_uniform(numViewPerRow))
+            let celluley = Int(arc4random_uniform(numViewPerRow))
+            let number = String(arc4random_uniform(9) + 1)
+            if lineVerification(x: cellulex, y: celluley, cont: number) && colVerification(x: cellulex, y: celluley, cont: number) && arr[cellulex][celluley].currentTitle == ""
+            {
+                arr[cellulex][celluley].setTitle(number, for: .normal)
+                arr[cellulex][celluley].backgroundColor = .gray
+                arr[cellulex][celluley].addTarget(self, action: #selector(nulaction), for: .touchUpInside)
+                arr[cellulex][celluley].removeTarget(self, action: #selector(buttonAction), for: .allEvents)
+                count = count + 1
+                print(count)
+            }
+        }
+    }
+    
+    @objc func nulaction(sender : UIButton){
+        
+    }
+    //vérification des occurences dans le tableau pour les colonnes
+    func colVerification (x:Int, y:Int, cont : String) -> Bool
+    {
+        for j in 0...dimGrille{
+            if arr[x][j].currentTitle == cont{
+                
+                return false
+            }
+        }
+        return true
+    }
+    
+    func validation () -> Bool {
+        for i in 0...dimGrille{
+            for j in 0...dimGrille{
+                if (!(lineVerification(x: j, y: i, cont: arr[j][i].currentTitle!)) && colVerification(x: j, y: i, cont: arr[j][i].currentTitle!)){
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 
     /*
