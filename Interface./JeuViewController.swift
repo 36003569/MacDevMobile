@@ -10,6 +10,7 @@ import UIKit
 
 class JeuViewController: UIViewController {
     
+    
     @IBOutlet weak var LabelTimer: UILabel!
     var gameTimer = Timer()
     var intTimer : Int = 0
@@ -21,6 +22,7 @@ class JeuViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view, typically from a nib.
         gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(JeuViewController.startGameTimer), userInfo: nil, repeats: true)
+        //finishLabel.isHidden = true
         
     }
     

@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var JouerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        JouerButton.backgroundColor = .green
+        JouerButton.setTitleColor(.blue , for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
